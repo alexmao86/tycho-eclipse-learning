@@ -13,4 +13,5 @@
 	<version>1.0.0-SNAPSHOT</version>
 	<packaging>eclipse-target-definition</packaging>
 	
+	<description>this is the default target will be used, it is eclipse-neon</description>
 </project>
