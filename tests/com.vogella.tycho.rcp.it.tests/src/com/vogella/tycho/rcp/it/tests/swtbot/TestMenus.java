@@ -24,7 +24,7 @@ public class TestMenus {
 
 	@Test
 	public void ensureSaveIsDisabledWhenNothingIsDirty() {
-		//SWTBotMenu menu = bot.menu("File").menu("Save");
+		SWTBotMenu menu = bot.menu("File").menu("Save");
 
 		//assertThat("Save command in menu is not enabled", not(menu.isEnabled()));
 		assertTrue(true);

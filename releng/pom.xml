@@ -15,7 +15,6 @@
 	<modules>
 		<module>com.vogella.tycho.update</module>
 		<module>com.vogella.tycho.product</module>
-		<module>com.vogella.rcp.target.neon</module>
-		<module>com.vogella.rcp.target.mars</module>
+		<module>com.vogella.rcp.target</module>
 	</modules>
 </project>

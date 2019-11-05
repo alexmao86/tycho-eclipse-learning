@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<site>
+   <feature id="com.vogella.tycho.feature" version="0.0.0">
+      <category name="tychoexample"/>
+   </feature>
+   <feature id="com.vogella.tycho.feature.source" version="0.0.0">
+      <category name="tychoexample-source"/>
+   </feature>
+
+   <category-def name="tychoexample" label="Tycho example"/>
+   <category-def name="tychoexample-source" label="Tycho example source bundles"/>
+</site>

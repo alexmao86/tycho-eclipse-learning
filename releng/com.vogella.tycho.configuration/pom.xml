@@ -37,6 +37,7 @@
 					</execution>
 				</executions>
 			</plugin>
+
 			<plugin>
 				<groupId>org.eclipse.tycho</groupId>
 				<artifactId>target-platform-configuration</artifactId>
@@ -45,11 +46,31 @@
 					<target>
 						<artifact>
 							<groupId>com.vogella.tycho</groupId>
-							<!-- will find  artifactId.target file in com.vogella.rcp.target project -->
-							<artifactId>eclipse-neon</artifactId>
+							<!-- will find artifactId.target file in com.vogella.rcp.target project -->
+							<artifactId>com.vogella.rcp.target</artifactId>
 							<version>1.0.0-SNAPSHOT</version>
 						</artifact>
 					</target>
+					<!-- 
+					
+					12.5. Adding org.eclipse.equinox.event as extra requirement
+					In most of the cases the org.eclipse.equinox.event plug-in is used 
+					in an Eclipse RCP application. Unfortunately it sometimes is not 
+					loaded properly for an integration test, even though it is part 
+					of the target platform of the product and mentioned in the start 
+					level configuration. Due to this it needs to be specified in the 
+					configuration of the target-platform-configuration plugin.
+					
+					 -->
+					<dependency-resolution>
+						<extraRequirements>
+							<requirement>
+								<type>eclipse-plugin</type>
+								<id>org.eclipse.equinox.event</id>
+								<versionRange>0.0.0</versionRange>
+							</requirement>
+						</extraRequirements>
+					</dependency-resolution>
 					<!-- The name is actually important. It must be the name of the Maven artifact id followed by .target. TODO <target> <artifact> <groupId>com.vogella.tycho</groupId> <artifactId>eclipse-neon</artifactId> <version>1.0.0-SNAPSHOT</version> </artifact> </target> -->
 					<environments>
 						<!-- -->
@@ -58,7 +79,7 @@
 							<ws>gtk</ws>
 							<arch>x86_64</arch>
 						</environment>
-						
+
 						<environment>
 							<os>win32</os>
 							<ws>win32</ws>
@@ -70,7 +91,7 @@
 							<ws>cocoa</ws>
 							<arch>x86_64</arch>
 						</environment>
-						
+
 					</environments>
 				</configuration>
 			</plugin>
